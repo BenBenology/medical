@@ -21,9 +21,12 @@
 
 - [`app/main.py`](/Users/henryking/Desktop/medical/app/main.py) 创建 FastAPI 应用
 - [`app/api/routes.py`](/Users/henryking/Desktop/medical/app/api/routes.py) 暴露 `/health` 和 `/api/chat`
+- [`app/core/config.py`](/Users/henryking/Desktop/medical/app/core/config.py) 提供基础配置对象
+- [`app/core/logging.py`](/Users/henryking/Desktop/medical/app/core/logging.py) 提供基础日志初始化
 - [`app/models/chat.py`](/Users/henryking/Desktop/medical/app/models/chat.py) 定义基础 schema
 - [`app/services/chat_service.py`](/Users/henryking/Desktop/medical/app/services/chat_service.py) 返回占位式结构化回答
 - [`tests/test_api.py`](/Users/henryking/Desktop/medical/tests/test_api.py) 覆盖最小接口测试
+- [`tests/test_core.py`](/Users/henryking/Desktop/medical/tests/test_core.py) 覆盖基础配置与日志测试
 
 这说明骨架已经成型，但离完整的 Agent 决策、Safety、RAG 和 LLM 调用还有距离。
 
@@ -133,8 +136,8 @@ app/core/llm.py
 
 当前状态：
 
-- 尚未实现
-- 下一步应先补一个可替换的 provider 封装和最小错误处理
+- 已有 `Settings` 基础对象和日志初始化
+- 下一步应补 `.env` 模板、模型供应商配置项和可替换的 provider 封装
 
 ### 6. Schema Layer
 

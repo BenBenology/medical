@@ -35,9 +35,11 @@
 
 - 已初始化 `FastAPI` 项目
 - 已初始化本地 `git` 仓库
+- 默认分支已调整为 `main`
 - 已提供 `GET /health`
 - 已提供 `POST /api/chat`
 - 已定义基础请求/响应模型
+- 已补充基础配置与日志模块
 - 已补充最小 API 测试
 
 当前 `/api/chat` 仍然使用占位式 service 响应，还没有接入真实 LLM、风险路由和 PDF RAG。
@@ -90,13 +92,17 @@ medical/
 ├── app/
 │   ├── api/
 │   │   └── routes.py
+│   ├── core/
+│   │   ├── config.py
+│   │   └── logging.py
 │   ├── services/
 │   │   └── chat_service.py
 │   ├── models/
 │   │   └── chat.py
 │   └── main.py
 └── tests/
-    └── test_api.py
+    ├── test_api.py
+    └── test_core.py
 ```
 
 ## Quick Start
@@ -160,7 +166,8 @@ curl -X POST http://127.0.0.1:8000/api/chat \
 
 - LLM 调用封装
 - 更真实的模式判断
-- trace 和日志
+- `.env` 模板
+- trace 透传
 - 前后端联调约定
 - 再进入 PDF RAG
 

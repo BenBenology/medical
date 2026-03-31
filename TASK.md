@@ -22,14 +22,16 @@
 已完成：
 
 - 已初始化本地 git 仓库
+- 已将默认分支切换为 `main`
 - 已创建 `pyproject.toml`
 - 已创建 `app/main.py`
 - 已创建基础目录 `app/api`、`app/models`、`app/services`
+- 已创建 `app/core`
 
 待完成：
 
 - 环境变量模板
-- 基础日志封装
+- 进一步细化配置项
 
 ### T0.2 健康检查与最小 API
 
@@ -84,7 +86,9 @@
 已完成：
 
 - 已添加 `tests/test_api.py`
+- 已添加 `tests/test_core.py`
 - 已验证 `/health` 与 `/api/chat` 两个接口测试通过
+- 已验证 `app/core` 配置与日志测试通过
 
 ## V1: 多轮追问与最小 PDF RAG
 
@@ -168,7 +172,7 @@
 
 当前最应该先做的是：
 
-1. 补 `app/core` 配置与日志模块
+1. 补 `.env.example` 和更完整的配置项
 2. 封装真实 LLM client
 3. 把 `/api/chat` 从占位响应升级为可替换编排逻辑
 4. 增加 trace、CORS 和错误结构
