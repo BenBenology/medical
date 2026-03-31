@@ -1,0 +1,20 @@
+[project]
+name = "medical-consultation-system"
+version = "0.1.0"
+description = "A Python-first AI medical consultation demo system"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  "fastapi>=0.115,<1.0",
+  "uvicorn>=0.30,<1.0",
+  "httpx>=0.27,<1.0"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=7.4,<9.0"
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
